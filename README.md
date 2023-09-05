@@ -1,4 +1,4 @@
-# bookmark_db
+# Bookmark DB
 
 Put your bookmark collection to good use
 
