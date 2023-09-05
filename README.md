@@ -12,8 +12,8 @@ Put your bookmark collection to good use
     pip install -r requirements.txt
     ./bin/create_database_and_user.sh bookmark_db bookmark_db bookmark_db
     ./manage.py migrate
-    export DJANGO_SUPERUSER_PASSWORD="admin"
-    ./manage.py createsuperuser --noinput --username admin --email admin@bookmark.db
+    DJANGO_SUPERUSER_PASSWORD="admin" ./manage.py createsuperuser --noinput --username admin --email admin@bookmark.db
+    ./manage.py import utils/test_files/
     ./manage.py runserver
     go to http://localhost:8000/admin/
 
