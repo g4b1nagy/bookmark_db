@@ -11,7 +11,11 @@ class Command(BaseCommand):
     help = 'Import bookmarks from .html files.'
 
     def add_arguments(self, parser):
-        parser.add_argument('bookmark_path', type=str, help='Path to bookmark file or to directory containing bookmark files.')
+        parser.add_argument(
+            'bookmark_path',
+            type=str,
+            help='Path to bookmark file or to directory containing bookmark files.',
+        )
 
     def handle(self, *args, **options):
         bookmarks, labels = get_bookmarks_and_labels(options['bookmark_path'])

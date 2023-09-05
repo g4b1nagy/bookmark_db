@@ -44,7 +44,7 @@ fi
 # Create schema
 # ==============================================================================
 
-if sudo su - postgres -c "psql -c \"SELECT schema_name FROM information_schema.schemata;\"" | grep -q "${user}"
+if sudo su - postgres -c "psql -d ${database} -c \"SELECT schema_name FROM information_schema.schemata;\"" | grep -q "${user}"
 then
     echo "Schema already exists."
 else

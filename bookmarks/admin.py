@@ -50,4 +50,6 @@ class BookmarkAdmin(BaseModelAdmin):
             url = ''
         else:
             url = obj.icon.url
-        return format_html('<img style="width: auto; max-height: 16px;" src="{url}">', url=url)
+        return format_html(
+            '<img style="width: auto; max-height: 16px;" src="{url}">', url=url
+        )
