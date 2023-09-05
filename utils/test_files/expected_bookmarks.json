@@ -1,0 +1,48 @@
+{
+    "http://new-bookmark-d.db/": {
+        "add_date": "1693904911",
+        "icon": null,
+        "labels": [
+            "Bookmarks bar",
+            "New folder D"
+        ],
+        "name": "New bookmark D"
+    },
+    "http://old-bookmark-a.db/": {
+        "add_date": "1693904735",
+        "icon": null,
+        "labels": [
+            "Bookmarks bar",
+            "Old folder A"
+        ],
+        "name": "Old bookmark A"
+    },
+    "http://old-bookmark-b.db/": {
+        "add_date": "1693904760",
+        "icon": null,
+        "labels": [
+            "Bookmarks bar",
+            "Old folder B"
+        ],
+        "name": "Old bookmark B"
+    },
+    "http://old-bookmark-c.db/": {
+        "add_date": "1693904780",
+        "icon": null,
+        "labels": [
+            "Bookmarks bar",
+            "New folder E",
+            "Old folder A",
+            "Old sub-folder C"
+        ],
+        "name": "Old bookmark C"
+    },
+    "http://old-bookmark-no-name.db/": {
+        "add_date": "1693904810",
+        "icon": null,
+        "labels": [
+            "Bookmarks bar"
+        ],
+        "name": "http://old-bookmark-no-name.db/"
+    }
+}

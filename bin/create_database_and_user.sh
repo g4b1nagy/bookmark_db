@@ -37,7 +37,7 @@ if sudo su - postgres -c "psql -c \"SELECT usename FROM pg_user;\"" | grep -q "$
 then
     echo "User already exists."
 else
-    sudo su - postgres -c "psql -c \"CREATE USER ${user} WITH PASSWORD '${password}';\""
+    sudo su - postgres -c "psql -c \"CREATE USER ${user} WITH PASSWORD '${password}' CREATEDB;\""
 fi
 
 # ==============================================================================

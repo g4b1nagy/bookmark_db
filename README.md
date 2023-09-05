@@ -16,3 +16,8 @@ Put your bookmark collection to good use
     ./manage.py createsuperuser --noinput --username admin --email admin@bookmark.db
     ./manage.py runserver
     go to http://localhost:8000/admin/
+
+
+## How do I run the tests?
+
+    ./manage.py test
