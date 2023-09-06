@@ -13,6 +13,7 @@ class LabelAdmin(BaseModelAdmin):
         'name',
     ]
     list_display = [
+        'created_on',
         'name',
     ]
     readonly_fields = [
@@ -30,6 +31,7 @@ class BookmarkAdmin(BaseModelAdmin):
     ]
     list_display = [
         '_icon',
+        'created_on',
         'name',
         'url',
     ]
