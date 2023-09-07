@@ -27,6 +27,12 @@ def get_bytes(icon):
 
 
 def parse_html(html, bookmarks=None, labels=None, current_labels=None):
+    """
+    1. Because bookmark folders (here referred to as labels) can be nested,
+        a recursive algorithm is required to parse them out.
+    2. Still confused? See point 1.
+    """
+
     if bookmarks is None:
         bookmarks = {}
     if labels is None:
