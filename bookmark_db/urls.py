@@ -27,6 +27,6 @@ admin.site.site_header = _('Bookmark DB')
 admin.site.site_title = _('Bookmark DB')
 # admin.site.site_url = None
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
+    path('', admin.site.urls),
+]

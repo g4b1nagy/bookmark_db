@@ -15,7 +15,7 @@ Put your bookmark collection to good use
     DJANGO_SUPERUSER_PASSWORD="admin" ./manage.py createsuperuser --noinput --username admin --email admin@bookmark.db
     ./manage.py import utils/test_files/
     ./manage.py runserver
-    go to http://localhost:8000/admin/
+    go to http://localhost:8000/
 
 
 ## How do I run the tests?
