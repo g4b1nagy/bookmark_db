@@ -17,9 +17,14 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth.models import User
 from django.urls import path
 from django.utils.translation import gettext as _
 
+
+# Disable Django admin authentication.
+admin_user = User.objects.first()
+admin.site.has_permission = lambda request: setattr(request, 'user', admin_user) or True
 
 admin.site.enable_nav_sidebar = False
 admin.site.index_title = _('Site administration')
