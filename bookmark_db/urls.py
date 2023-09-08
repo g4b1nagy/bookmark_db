@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import django
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -23,8 +24,12 @@ from django.utils.translation import gettext as _
 
 
 # Disable Django admin authentication.
-admin_user = User.objects.first()
-admin.site.has_permission = lambda request: setattr(request, 'user', admin_user) or True
+# try / except because relation "auth_user" does not exist when we first run migrations.
+try:
+    admin_user = User.objects.first()
+    admin.site.has_permission = lambda request: setattr(request, 'user', admin_user) or True
+except:
+    pass
 
 admin.site.enable_nav_sidebar = False
 admin.site.index_title = _('Site administration')
