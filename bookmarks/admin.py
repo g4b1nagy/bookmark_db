@@ -4,22 +4,7 @@ from django.utils.translation import gettext as _
 
 from utils.admin import BaseModelAdmin
 
-from .models import Label, Bookmark
-
-
-@admin.register(Label)
-class LabelAdmin(BaseModelAdmin):
-    search_fields = [
-        'name',
-    ]
-    list_display = [
-        'created_on',
-        'name',
-    ]
-    readonly_fields = [
-        'created_on',
-        'updated_on',
-    ]
+from .models import Bookmark, Label
 
 
 @admin.register(Bookmark)
@@ -30,7 +15,7 @@ class BookmarkAdmin(BaseModelAdmin):
         'labels__name',
     ]
     list_display = [
-        '_icon',
+        'icon_display',
         'created_on',
         'name',
         'url',
@@ -46,8 +31,8 @@ class BookmarkAdmin(BaseModelAdmin):
         'labels',
     ]
 
-    @admin.display(description=_('icon'))
-    def _icon(self, obj):
+    @admin.display(description=_('Icon'))
+    def icon_display(self, obj):
         if obj.icon.name == '':
             url = ''
         else:
@@ -55,3 +40,18 @@ class BookmarkAdmin(BaseModelAdmin):
         return format_html(
             '<img style="width: auto; max-height: 16px;" src="{url}">', url=url
         )
+
+
+@admin.register(Label)
+class LabelAdmin(BaseModelAdmin):
+    search_fields = [
+        'name',
+    ]
+    list_display = [
+        'created_on',
+        'name',
+    ]
+    readonly_fields = [
+        'created_on',
+        'updated_on',
+    ]
